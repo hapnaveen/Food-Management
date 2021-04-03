@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'navbar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  @Output() isLogout = new EventEmitter<void>()
+  constructor(public firebaseService: LoginService) { }
 
   ngOnInit(): void {
+  }
+  logout(){
+    this.firebaseService.logout()
+    this.isLogout.emit()
   }
 
 }
