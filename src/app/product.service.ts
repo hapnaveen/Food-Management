@@ -13,6 +13,10 @@ export class ProductService {
   }
 
   getAll(){
-    return this.db.list('/products');
+    return this.db.list<any>('/products').snapshotChanges();
+  }
+
+  getProduct(id:string){
+    return this.db.database.ref('products').child(id).get();
   }
 }
