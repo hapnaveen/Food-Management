@@ -25,6 +25,8 @@ import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { LoginService } from './login/login.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     LoginComponent,
     AdminProductsComponent,
     ProductFormComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
