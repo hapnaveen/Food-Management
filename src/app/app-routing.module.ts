@@ -41,16 +41,20 @@ const routes: Routes = [
     component: LoginComponent 
   },
   { 
-    path: 'admin/products', 
-    component: AdminProductsComponent
-  },
-  { 
     path: 'admin/orders', 
     component: AdminOrdersComponent 
   },
   { 
     path: 'admin/products/new', 
     component: ProductFormComponent
+  },
+  { 
+    path: 'admin/products/:id', 
+    component: ProductFormComponent
+  },
+  { 
+    path: 'admin/products', 
+    component: AdminProductsComponent
   },
 ];
 
