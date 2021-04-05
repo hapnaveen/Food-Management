@@ -12,7 +12,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { 
-    path: 'home', 
+    path: '', 
     component: HomeComponent
   },
   { 
@@ -32,12 +32,8 @@ const routes: Routes = [
     component: OrderSuccessComponent 
   },
   { 
-    path: '',
+    path: 'login',
     component: LoginComponent 
-  },
-  { 
-    path: 'admin/products', 
-    component: AdminProductsComponent
   },
   { 
     path: 'admin/orders', 
@@ -46,6 +42,14 @@ const routes: Routes = [
   { 
     path: 'admin/products/new', 
     component: ProductFormComponent
+  },
+  { 
+    path: 'admin/products/:id', 
+    component: ProductFormComponent
+  },
+  { 
+    path: 'admin/products', 
+    component: AdminProductsComponent
   },
 ];
 
