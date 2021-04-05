@@ -9,10 +9,15 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-  categories$;
+  categories = [];
   
-  constructor(private router: Router, private categoryService: CategoryService, private productService: ProductService) {
-    this.categories$ = categoryService.getCategories();
+  constructor(private router: Router, categoryService: CategoryService, private productService: ProductService) {
+    categoryService.getCategories().then(docs => {
+      docs.forEach(doc => {
+        this.categories.push(doc.val().name);
+      });
+      console.log(this.categories);
+    })
   }
 
   save(product){
