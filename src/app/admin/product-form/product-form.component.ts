@@ -36,9 +36,7 @@ export class ProductFormComponent implements OnInit {
   //   this.productService.create(product);
   //   this.router.navigate(['/admin/products']);
 
-     let id_p = this.route.snapshot.paramMap.get('id');
-     if(id_p) this.productService.get(id_p).valueChanges().subscribe( p => this.product = p);
-
+    
      
   }
 

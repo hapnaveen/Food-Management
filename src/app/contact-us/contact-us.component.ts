@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactUsService } from '../contact-us.service';
 
 @Component({
   selector: 'contact-us',
@@ -7,7 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  f_name: string = '';
+  email: string = '';
+  subject: string = '';
+  message: string = '';
+
+  constructor(public ContactUsService: ContactUsService) { }
+
+  createContactUs()
+  {
+    this.ContactUsService.createNewContactUs({
+      f_name: this.f_name,
+      emai: this.email,
+      subject: this.subject,
+      messege: this.message,
+    }).then(res => {
+      console.log(res);
+      alert("Your messege has been successfully recorded!");
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 
   ngOnInit(): void {
   }
