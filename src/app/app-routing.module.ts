@@ -71,6 +71,11 @@ const routes: Routes = [
     path: 'admin/contact', 
     component: AdminContactComponent
   },
+  { 
+    path: 'admin/contact', 
+    component: AdminContactComponent
+  },
+  
 ];
 
 @NgModule({

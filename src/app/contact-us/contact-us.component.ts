@@ -21,10 +21,10 @@ export class ContactUsComponent implements OnInit {
       f_name: this.f_name,
       email: this.email,
       subject: this.subject,
-      messege: this.message,
+      message: this.message,
     }).then(res => {
       console.log(res);
-      alert("Your messege has been successfully recorded!");
+      alert("Your message has been successfully recorded!");
     }).catch(error => {
       console.log(error);
     });

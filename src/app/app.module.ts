@@ -46,8 +46,9 @@ import { AdminContactComponent } from './admin/admin-contact/admin-contact.compo
     AboutUsComponent,
     ContactUsComponent,
     FooterComponent,
-    AdminContactComponent
+    AdminContactComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
