@@ -17,7 +17,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 const routes: Routes = [
   { 
     path: '', 
-    component: HomeComponent
+    component: ProductsComponent
   },
   { 
     path: 'products', 

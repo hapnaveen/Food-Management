@@ -1,3 +1,37 @@
 <navbar></navbar>
-<p>products works!</p>
+
+<div class="row">
+    <div class="col-3">
+        <div class="list-group">
+            <a *ngFor="let c of categories" [value]="c" 
+            class="list-group-item list-group-item-action"
+            routerLink="/"
+            [queryParams]="{ category: c }"
+            [class.active]="category === c">
+                {{ c }}
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="container">
+            <div class="row">
+                <ng-container *ngFor="let p of products; let i = index">
+                    <div class="col">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="{{ p.imageUrl }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ p.title }}</h5>
+                                <p class="card-text">{{ p.price | currency:'Rs. ':true }}</p>
+                                <a href="#" class="btn btn-primary">ADD TO CART</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="(i+1) % 2 == 0" class="w-100"></div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <footer></footer>
