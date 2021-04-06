@@ -27,6 +27,7 @@ import { LoginService } from './login/login.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { AdminContactComponent } from './admin/admin-contact/admin-contact.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     ProductFormComponent,
     AboutUsComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
+    AdminContactComponent
   ],
   imports: [
     BrowserModule,

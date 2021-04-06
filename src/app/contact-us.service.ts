@@ -16,6 +16,8 @@ export class ContactUsService {
     {
       return this.db.list('Messages').push(record);
     }
-
+    getAll(){
+      return this.db.list<any>('/Messages').snapshotChanges();
+    } 
 
   }

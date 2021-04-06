@@ -19,7 +19,7 @@ export class ContactUsComponent implements OnInit {
   {
     this.ContactUsService.createNewContactUs({
       f_name: this.f_name,
-      emai: this.email,
+      email: this.email,
       subject: this.subject,
       messege: this.message,
     }).then(res => {
