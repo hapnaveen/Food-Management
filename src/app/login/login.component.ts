@@ -13,8 +13,11 @@ export class LoginComponent {
   ngOnInit() {
     if (localStorage.getItem('user') !== null)
       this.isSignedIn = true
-    else
+    else{
+      alert("Wrong Credentials! Please check again.");
       this.isSignedIn = false
+    }
+    console.log(this.isSignedIn);
   }
   async onSignup(email: string, password: string) {
     await this.LoginService.signup(email, password)

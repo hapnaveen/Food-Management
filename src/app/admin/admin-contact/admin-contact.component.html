@@ -1,21 +1,23 @@
 <navbar></navbar>
-<div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>email</th>
-                <th>Message</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let m of Messages">
-                <td>{{ m.f_name }}</td>
-                <td>{{ m.email }}</td>
-                <td><b>{{ m.subject }}</b><br> 
-                    {{m.message}} </td>      
-            </tr>
-        </tbody>
-    </table>
+<div class="top">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of Messages">
+                    <td>{{ m.f_name }}</td>
+                    <td>{{ m.email }}</td>
+                    <td><b>{{ m.subject }}</b><br>
+                        {{m.message}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <footer></footer>

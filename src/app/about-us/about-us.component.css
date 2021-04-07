@@ -1,12 +1,15 @@
+.top{
+  padding-top: 60px;
+}
+
 .breadcrumbs {
     padding: 15px 0;
     background: #1d1b16;
-    margin-top: 110px;
   }
   
   @media (max-width: 992px) {
     .breadcrumbs {
-      margin-top: 98px;
+      margin-top: 9px;
     }
   }
   

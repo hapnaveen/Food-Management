@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body { padding-top: 80px; }
+.top{
+    padding-top: 85px;
+    background-color:#0e0d0a ;
+}
