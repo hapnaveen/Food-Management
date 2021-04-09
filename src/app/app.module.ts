@@ -18,16 +18,20 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-import { LoginComponent } from './login/login.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
-import { LoginService } from './login/login.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminContactComponent } from './admin/admin-contact/admin-contact.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AuthService } from './auth.service';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +44,17 @@ import { AdminContactComponent } from './admin/admin-contact/admin-contact.compo
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminOrdersComponent,
-    LoginComponent,
     AdminProductsComponent,
     ProductFormComponent,
     AboutUsComponent,
     ContactUsComponent,
     FooterComponent,
     AdminContactComponent,
+    SignInComponent,
+    SignUpComponent,
+    AdminNavbarComponent,
+    AdminSignupComponent,
+    AdminHomeComponent,
   ],
   
   imports: [
@@ -63,7 +71,7 @@ import { AdminContactComponent } from './admin/admin-contact/admin-contact.compo
   providers: [
     CategoryService,
     ProductService,
-    LoginService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

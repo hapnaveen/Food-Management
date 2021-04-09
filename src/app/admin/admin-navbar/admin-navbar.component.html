@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark, nav">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/admin/home">Admin Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/admin/orders">Manage Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/admin/products">Manage Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/admin/contact">Messages Recieved</a>
+                </li>
+            </ul>
+
+            <li class="nav-item">
+                <a class="btn btn-danger" (click)="logout()">
+                    <i class="fas fa-sign-out-alt"></i>Log out
+                </a>
+            </li>
+        </div>
+    </div>
+</nav>

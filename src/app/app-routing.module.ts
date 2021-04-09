@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminContactComponent } from './admin/admin-contact/admin-contact.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ProductsComponent } from './products/products.component';
@@ -16,11 +19,11 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { 
-    path: '', 
-    component: ProductsComponent
+    path: 'home', 
+    component: HomeComponent
   },
   { 
-    path: 'products', 
+    path: 'product', 
     component: ProductsComponent 
   },
   { 
@@ -42,10 +45,6 @@ const routes: Routes = [
   { 
     path: 'my-orders', 
     component: MyOrdersComponent 
-  },
-  { 
-    path: 'login',
-    component: LoginComponent 
   },
   { 
     path: 'admin/orders', 
@@ -72,10 +71,26 @@ const routes: Routes = [
     component: AdminContactComponent
   },
   { 
-    path: 'admin/contact', 
-    component: AdminContactComponent
+    path: '', 
+    redirectTo: '/sign-in', 
+    pathMatch: 'full'
   },
-  
+  { 
+    path: 'sign-in', 
+    component: SignInComponent
+  },
+  { 
+    path: 'register-user', 
+    component: SignUpComponent
+  },
+  {
+    path: 'admin/signup',
+    component: AdminSignupComponent
+  },
+  {
+    path: 'admin/home',
+    component: AdminHomeComponent
+  }
 ];
 
 @NgModule({
