@@ -1,5 +1,24 @@
 <admin-navbar></admin-navbar>
 <div class="top">
-    <p>admin-orders works!</p>
+    <div class="container"  data-aos="fade-up">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of admin_orders">
+                    <td>{{ p.title }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>
+                        <a [routerLink]="['/admin/products/', p.id]">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <footer></footer>

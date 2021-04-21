@@ -1,47 +1,15 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-  
-      <div class="px-logo">
-          <img src="../../../assets/img/spectrum_logo.png" alt="Spectrum Logo">
-      </div>
-  
-      <div class="authBlock">
-        <h3>Sign Up</h3>
-  
-        <div class="formGroup">
-          <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPwd required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-        </div>
-  
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-  
-        <!-- Continue with Google -->
-        <!-- <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Continue with Google
-          </button>
-        </div>
-         -->
-      </div>
-  
-      <div class="redirectToLogin">
-        <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
-      </div>
 
-      <div class="redirectToLogin">
-        <span>Are you an admin?<span class="redirect" routerLink="/admin/signup"> Sign Up</span></span>
-      </div>
+  <img class="card-img-top" src="../../../assets/img/background_new.jpg" alt="Card image cap">
+  <div class="card position-absolute top-50 start-50 translate-middle card text-white bg-dark mb-3" style="width: 25rem; opacity: 75%;">
+    <img class="card-img-top" src="../../../assets/img/spectrum_logo.png" alt="Spectrum_logo" style="padding-left: 30%; padding-right: 30%; padding-top: 30px;">
+    <div class="card-body">
+      <h3 class="card-title text-center">Sign Up</h3><br>
+      <input type="email" class="form-control" placeholder="Email Address" #userEmail required><br>
+      <input type="password" class="form-control" placeholder="Password" #userPwd required><br>
+      <input type="button" class="btn btn-primary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" style="width: 100%;">
     </div>
-  
+    <span class="text-center">or</span>
+    <span class="text-center">Already have an account?<a routerLink="//sign-in"> Sign In</a></span>
+    <span class="text-center">Are you an admin?<a routerLink="/admin/signup"> Login</a></span><br>
   </div>
-  
+ 

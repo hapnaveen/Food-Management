@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { ContactUsService } from '../contact-us.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ContactUsComponent implements OnInit {
   subject: string = '';
   message: string = '';
 
-  constructor(public ContactUsService: ContactUsService) { }
+
+  constructor(public ContactUsService: ContactUsService, public authService: AuthService) {  }
 
   createContactUs()
   {
@@ -30,7 +32,12 @@ export class ContactUsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  public user = this.authService.userID;
+  viewuser(){
+    console.log(this.user);
   }
 
+  ngOnInit(): void {
+  }
+  
 }

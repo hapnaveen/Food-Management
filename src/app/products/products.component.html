@@ -20,7 +20,28 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ p.title }}</h5>
                                     <p class="card-text">{{ p.price | currency:'Rs. ':true }}</p>
-                                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+
+                                    <button class="btn btn-outline-primary mb-2 mr-2"
+                                        (click)="openWindowCustomClass(content)">Add To Cart</button>
+                                    <ng-template #content let-modal>
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">{{p.title}}</h4>
+                                            <button type="button" class="close" aria-label="Close"
+                                                (click)="modal.dismiss('Cross click')">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>One fine body&hellip;</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a (click)="addCart(p.title, p.price, p.category, p.imageUrl)"
+                                        class="btn btn-primary">ADD TO CART</a>
+                                            <button type="button" class="btn btn-light"
+                                                (click)="modal.close('Close click')">Close</button>
+                                        </div>
+                                    </ng-template>
+
                                 </div>
                             </div>
                         </div>

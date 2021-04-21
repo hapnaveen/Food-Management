@@ -6,23 +6,18 @@ import { AngularFireStorage } from '@angular/fire/storage';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminSignupService {
-
-  public token : string;
+export class AddToCartService {
 
   constructor(private db: AngularFireDatabase, 
     private fireservices:AngularFirestore,
     private storage: AngularFireStorage) { }
 
-    // get(token_new){
-    //   return this.db.object(token_new);
-    // }
+  addToCart(record)
+  {
+    return this.db.list('Cart').push(record);
+  }
 
-    submit(token_get){
-      this.token = token_get;
-    }
-    
-    getAll(){
-      return this.db.list<any>('/Admins').snapshotChanges();
-    }
+  getAll(){
+    return this.db.list<any>('/Cart').snapshotChanges();
+  }
 }

@@ -1,8 +1,11 @@
-<div class="card position-absolute top-50 start-50 translate-middle" style="width: 25rem;">
-    <div class="card-body">
+<img class="card-img-top" src="../../../assets/img/background_new.jpg" alt="Card image cap">
+<div class="card position-absolute top-50 start-50 translate-middle card text-white bg-dark mb-3" style="width: 25rem; opacity: 75%;">
+    <div class="card-body" *ngFor="let p of Admins; let i = index">
         <h3 class="card-title text-center">Admin Login</h3><br>
-        <input [(ngModel)]="token" name="token" id="token" type="text" class="form-control"><br>
-        <button type="button" class="btn btn-primary" style="width: 100%;" (click)="submit()">Login</button>
+        <input name="token" id="token" type="text" class="form-control"  #admintoken required><br>
+        <button type="button" class="btn btn-primary" style="width: 100%;" (click)="AdminSignupService.submit(admintoken.value) ; submit(p.token)">
+            Login
+        </button>
     </div>
     <p class="text-center">User SignIn: <a routerLink='/sign-in'>SignIn</a> </p>
 </div>

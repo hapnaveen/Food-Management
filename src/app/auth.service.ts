@@ -9,6 +9,7 @@ import { User } from './user';
 })
 export class AuthService {
   userData: any; // Save logged in user data
+  public userID: string;
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
@@ -38,6 +39,8 @@ export class AuthService {
           this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
+        this.userID=email;
+
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -50,6 +53,7 @@ export class AuthService {
         this.SetUserData(result.user);
         this.router.navigate(['home']);
         alert("Successfully SignedUp.. Please Login to continue!");
+        this.userID=email;
       }).catch((error) => {
         window.alert(error.message)
       })

@@ -1,5 +1,32 @@
 <navbar></navbar>
 <div class="top">
-    <p>shopping-cart works!</p>
+
+  <section id="menu" class="menu section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Menu</h2>
+        <p>Check Our Tasty Menu</p>
+      </div>
+
+      <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" *ngFor="let p of Cart; let i = index">
+
+        <span *ngIf="p.userID === user">
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{{ p.cart_imageUrl }}" class="menu-img" alt="">
+            <div class="menu-content">
+              <h5>{{ p.cart_title }}.</h5><span>{{ p.cart_price | currency:'Rs. ':true }}</span>
+            </div>
+            <div class="menu-ingredients">
+              Lorem, deren, trataro, filede, nerada
+            </div>
+          </div>
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
 </div>
 <footer></footer>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,14 @@ export class ContactUsService {
     createNewContactUs(record)
     {
       return this.db.list('Messages').push(record);
+      
     }
     getAll(){
       return this.db.list<any>('/Messages').snapshotChanges();
-    } 
+    }
+
+    
+    
+    
 
   }
