@@ -4,8 +4,10 @@
     <div class="row">
         <div class="col-3">
             <div class="list-group">
-                <a *ngFor="let c of categories" [value]="c" class="list-group-item list-group-item-action"
-                    routerLink="/" [queryParams]="{ category: c }" [class.active]="category === c">
+                <a class="list-group-item list-group-item-action" (click)="category_get('all')" [class.active]="category_all===category_show">
+                    All Categories
+                </a>
+                <a *ngFor="let c of categories" [value]="c" class="list-group-item list-group-item-action" (click)="category_get(c)" [class.active]="c===category_show">
                     {{ c }}
                 </a>
             </div>
@@ -14,6 +16,8 @@
             <div class="container">
                 <div class="row">
                     <ng-container *ngFor="let p of products; let i = index">
+                       
+                        <span *ngIf="category_show === category_all">
                         <div class="col">
                             <div class="card text-white bg-dark mb-3" style="width: 20rem;">
                                 <img class="card-img-top" src="{{ p.imageUrl }}" alt="Card image cap">
@@ -25,13 +29,14 @@
                                         (click)="openWindowCustomClass(content)">Add To Cart</button>
                                     <ng-template #content let-modal>
                                         <div class="modal-header">
-                                            <h4 class="modal-title">{{p.title}}</h4>
+                                            <h4 class="modal-title">{{p.title}}</h4><h7 class="modal-title">({{p.category}})</h7>
                                             <button type="button" class="close" aria-label="Close"
                                                 (click)="modal.dismiss('Cross click')">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
+                                            <img class="card-img-top" src="{{ p.imageUrl }}" alt="Card image cap">
                                             <p>One fine body&hellip;</p>
                                         </div>
                                         <div class="modal-footer">
@@ -45,6 +50,45 @@
                                 </div>
                             </div>
                         </div>
+                    </span>
+
+
+                    <span *ngIf="category_show === p.category">
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="width: 20rem;">
+                                <img class="card-img-top" src="{{ p.imageUrl }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ p.title }}</h5>
+                                    <p class="card-text">{{ p.price | currency:'Rs. ':true }}</p>
+
+                                    <button class="btn btn-outline-primary mb-2 mr-2"
+                                        (click)="openWindowCustomClass(content)">Add To Cart</button>
+                                    <ng-template #content let-modal>
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">{{p.title}}</h4><h7 class="modal-title">({{p.category}})</h7>
+                                            <button type="button" class="close" aria-label="Close"
+                                                (click)="modal.dismiss('Cross click')">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img class="card-img-top" src="{{ p.imageUrl }}" alt="Card image cap">
+                                            <p>One fine body&hellip;</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a (click)="addCart(p.title, p.price, p.category, p.imageUrl)"
+                                        class="btn btn-primary">ADD TO CART</a>
+                                            <button type="button" class="btn btn-light"
+                                                (click)="modal.close('Close click')">Close</button>
+                                        </div>
+                                    </ng-template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+
+
                         <div *ngIf="(i+1) % 2 == 0" class="w-100"></div>
                     </ng-container>
                 </div>

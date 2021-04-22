@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddToCartService } from '../add-to-cart.service';
@@ -11,18 +11,19 @@ import { ProductService } from '../product.service';
   selector: 'products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
+  encapsulation: ViewEncapsulation.None,
   styles: [`
-  .dark-modal .modal-content {
-    background-color: #292b2c;
-    color: white;
-  }
-  .dark-modal .close {
-    color: white;
-  }
-  .light-blue-backdrop {
-    background-color: #5cb3fd;
-  }
-`]
+    .dark-modal .modal-content {
+      background-color: #292b2c;
+      color: white;
+    }
+    .dark-modal .close {
+      color: white;
+    }
+    .light-blue-backdrop {
+      background-color: #5cb3fd;
+    }
+  `]
 })
 export class ProductsComponent implements OnInit {
 
@@ -36,6 +37,8 @@ export class ProductsComponent implements OnInit {
   cart_category: string;
   cart_imageUrl: string;
   closeResult: string;
+  category_show: string;
+  category_all = "all";
 
   constructor(private productService: ProductService, categoryService: CategoryService, private route: ActivatedRoute, public authService: AuthService, public addToCartService: AddToCartService, private modalService: NgbModal) {
     this.productService.getAll().subscribe(data => {
@@ -81,6 +84,42 @@ export class ProductsComponent implements OnInit {
       console.log(error);
     });
   }
+
+
+  category_get(c){
+   this.category_show = c; 
+   console.log(this.category_show);
+  }
+
+
+  openBackDropCustomClass(content) {
+    this.modalService.open(content, {backdropClass: 'light-blue-backdrop'});
+  }
+
+  openWindowCustomClass(content) {
+    this.modalService.open(content, { windowClass: 'dark-modal' });
+  }
+
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' });
+  }
+
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+
+  openXl(content) {
+    this.modalService.open(content, { size: 'xl' });
+  }
+
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
+
+  openScrollableContent(longContent) {
+    this.modalService.open(longContent, { scrollable: true });
+  }
+
 
   ngOnInit(): void {
   }
