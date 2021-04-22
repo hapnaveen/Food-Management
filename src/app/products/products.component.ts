@@ -36,6 +36,7 @@ export class ProductsComponent implements OnInit {
   cart_price: Number;
   cart_category: string;
   cart_imageUrl: string;
+  cart_qty: Number;
   closeResult: string;
   category_show: string;
   category_all = "all";
@@ -65,18 +66,20 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  addCart(title,price,category,imageUrl)
+  addCart(title,price,category,imageUrl,Quantity)
   {
     this.cart_title = title;
     this.cart_price = price;
     this.cart_category = category;
     this.cart_imageUrl = imageUrl;
+    this.cart_qty = Quantity;
     this.addToCartService.addToCart({
       userID: this.user,
       cart_title: this.cart_title,
       cart_price: this.cart_price,
       cart_category: this.cart_category,
-      cart_imageUrl: this.cart_imageUrl
+      cart_imageUrl: this.cart_imageUrl,
+      cart_quantity: this.cart_qty
     }).then(res => {
       console.log(res);
       alert("Your product has been successfully recorded!");

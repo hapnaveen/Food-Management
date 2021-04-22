@@ -4,15 +4,19 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Price</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of admin_orders">
-                    <td>{{ p.title }}</td>
-                    <td>{{ p.price }}</td>
+                <tr *ngFor="let p of admin_orders; let i = index">
+                    <td>{{ p.userID }}</td>
+                    <td>{{ p.cart_title }}</td>
+                    <td>{{ p.cart_quantity }}</td>
+                    <td>{{ p.cart_price * p.cart_quantity | currency:'Rs. ':true}}</td>
                     <td>
                         <a [routerLink]="['/admin/products/', p.id]">Edit</a>
                     </td>

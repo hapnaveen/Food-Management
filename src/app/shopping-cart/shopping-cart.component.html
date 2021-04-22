@@ -15,7 +15,7 @@
           <div class="col-lg-6 menu-item filter-starters">
             <img src="{{ p.cart_imageUrl }}" class="menu-img" alt="">
             <div class="menu-content">
-              <h5>{{ p.cart_title }}.</h5><span>{{ p.cart_price | currency:'Rs. ':true }}</span>
+              <h5>{{ p.cart_title }}.</h5><span>{{ p.cart_price*p.cart_quantity | currency:'Rs. ':true}}</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
@@ -26,7 +26,5 @@
 
     </div>
   </section>
-
-
 </div>
 <footer></footer>

@@ -55,6 +55,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     AdminNavbarComponent,
     AdminSignupComponent,
     AdminHomeComponent,
+    
   ],
   
   imports: [
@@ -66,12 +67,13 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,    
-    NgbModule,   
+    NgbModule,  
+    
   ],
   providers: [
     CategoryService,
     ProductService,
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
