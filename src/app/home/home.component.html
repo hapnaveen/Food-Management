@@ -1,34 +1,29 @@
-<navbar></navbar>
+<span *ngIf="email === 'new' ">
+    <navbar-bf></navbar-bf>
+</span>
+<span *ngIf="email !== 'new' ">
+    <navbar></navbar>
+</span>
+
+
 
 <div class="main">
-    <div class="row" >
-        <div class="col">
-            <h1>SPECTRUM</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button type="button">Get  Started</button>
-        </div>
-        <div class="col">
-            <div class="card card1">
-                <h5>Category 1</h5>
-                <p>Lorem Ipsum is simply dummy text of the printing a</p>
-            </div>
-            <div class="card card2">
-              <h5>Category 1</h5>
-              <p>Lorem Ipsum is simply dummy text of the printing a</p>
-          </div>
-          <div class="card card3">
-              <h5>Category 1</h5>
-              <p>Lorem Ipsum is simply dummy text of the printing a</p>
-          </div>
-          <div class="card card4">
-              <h5>Category 1</h5>
-              <p>Lorem Ipsum is simply dummy text of the printing a</p>
-          </div>
-          
-
-        </div>
+    <div class="row">
+        <h1>SPECTRUM</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <button type="button">Get Started</button>
     </div>
- </div>
-  
+    <div class="row1">
+        <div *ngFor="let c of category" class="card card1">
+            <h5>{{c.name}}</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing a</p>
+        </div>
 
+    </div>
+</div>
 <footer></footer>

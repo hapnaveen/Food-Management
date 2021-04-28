@@ -32,6 +32,7 @@ import { AuthService } from './auth.service';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { NavbarBfComponent } from './navbar-bf/navbar-bf.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     AdminNavbarComponent,
     AdminSignupComponent,
     AdminHomeComponent,
+    NavbarBfComponent,
     
   ],
   

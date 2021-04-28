@@ -9,7 +9,7 @@ import { User } from './user';
 })
 export class AuthService {
   userData: any; // Save logged in user data
-  public userID: string;
+  public userID: string = "new";
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service

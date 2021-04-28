@@ -13,6 +13,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { NavbarBfComponent } from './navbar-bf/navbar-bf.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -72,7 +73,7 @@ const routes: Routes = [
   },
   { 
     path: '', 
-    redirectTo: '/sign-in', 
+    redirectTo: '/home', 
     pathMatch: 'full'
   },
   { 
@@ -90,7 +91,11 @@ const routes: Routes = [
   {
     path: 'admin/home',
     component: AdminHomeComponent
-  }
+  },
+  { 
+    path: 'navbar-bf', 
+    component: NavbarBfComponent
+  },
 ];
 
 @NgModule({

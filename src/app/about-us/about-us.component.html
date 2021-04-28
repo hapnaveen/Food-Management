@@ -1,4 +1,11 @@
-<navbar></navbar>
+<span *ngIf="email === 'new' ">
+  <navbar-bf></navbar-bf>
+</span>
+<span *ngIf="email !== 'new' ">
+  <navbar></navbar>
+</span>
+
+
 <div class="top">
   <section id="about" class="about">
     <div class="container" data-aos="fade-up">

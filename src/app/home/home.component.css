@@ -15,6 +15,7 @@
    padding-left: 8%;
    padding-right: 8%;
    box-sizing: border-box;
+   padding-top: 85px;
 
 
 
@@ -22,11 +23,17 @@
 
 .row{
     display: flex;
-    height: 88%;
+    height: 50%;
+    align-items: center;
+}
+.row1{
+    display: flex;
+    height: 50%;
     align-items: center;
 }
 .col{
     flex-basis: 50%;
+    text-align: center;
 }
 
 h1{
@@ -67,8 +74,6 @@ button{
     transition: transform 0.5s;
     background-position: center;
     background-size: cover;
-
-
 }
 .card1{
     background-image: url(../../../src/assets/img/wesual-click-rsWZ-P9FbQ4-unsplash.jpg);
