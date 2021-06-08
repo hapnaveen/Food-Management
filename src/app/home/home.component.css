@@ -16,9 +16,6 @@
    padding-right: 8%;
    box-sizing: border-box;
    padding-top: 85px;
-
-
-
 }
 
 .row{
@@ -65,7 +62,6 @@ button{
 .card{
     width: 200px;
     height: 230px;
-    display: inline-block;
     border-radius: 10px;
     padding: 15px 25px;
     box-sizing: border-box;
@@ -78,15 +74,7 @@ button{
 .card1{
     background-image: url(../../../src/assets/img/wesual-click-rsWZ-P9FbQ4-unsplash.jpg);
 }
-.card2{
-    background-image: url(../../assets/img/christina-branco-7P-wc2Z2Ujs-unsplash.jpg);
-}
-.card3{
-    background-image: url(../../assets/img/charles-deluvio-D-vDQMTfAAU-unsplash.jpg);
-}
-.card4{
-    background-image: url(../../assets/img/rirri-R4zSXgDZLEU-unsplash.jpg);
-}
+
 
 .card:hover{
     transform: translateY(-10px);

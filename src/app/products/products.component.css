@@ -1,0 +1,22 @@
+.main{
+    
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../../assets/img/clem-onojeghuo-zlABb6Gke24-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    padding-top: 85px;
+ }
+
+.crop{
+  height: 200px;
+  overflow: hidden;
+}
+ 
+@media (min-width: 1024px) {
+    .main {
+      background-attachment: fixed;
+    }
+}

@@ -19,11 +19,13 @@
         <button type="button">Get Started</button>
     </div>
     <div class="row1">
-        <div *ngFor="let c of category" class="card card1">
+        <div *ngFor="let c of category; let i = index" class="card card1">
+            <div class="col">
             <h5>{{c.name}}</h5>
             <p>Lorem Ipsum is simply dummy text of the printing a</p>
+            </div>
+            <div *ngIf="(i+1) % 6 == 0" class="w-100"></div>
         </div>
-
     </div>
 </div>
 <footer></footer>

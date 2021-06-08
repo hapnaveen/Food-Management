@@ -57,7 +57,7 @@ export class AdminSignupComponent implements OnInit {
   submit(token2) {
     this.token_store = token2;
     if (this.AdminSignupService.token === this.token_store) {
-            this.router.navigate(['admin/home']);
+            this.router.navigate(['admin/orders']);
           }
           else{
             alert("Incorrect token!");

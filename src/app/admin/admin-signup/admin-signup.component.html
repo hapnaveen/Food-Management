@@ -2,7 +2,7 @@
 <div class="card position-absolute top-50 start-50 translate-middle card text-white bg-dark mb-3" style="width: 25rem; opacity: 75%;">
     <div class="card-body" *ngFor="let p of Admins; let i = index">
         <h3 class="card-title text-center">Admin Login</h3><br>
-        <input name="token" id="token" type="text" class="form-control"  #admintoken required><br>
+        <input name="token" id="token" type="password" class="form-control"  #admintoken required><br>
         <button type="button" class="btn btn-primary" style="width: 100%;" (click)="AdminSignupService.submit(admintoken.value) ; submit(p.token)">
             Login
         </button>

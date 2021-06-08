@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddToCartService } from '../add-to-cart.service';
@@ -50,9 +50,9 @@ export class ProductsComponent implements OnInit {
         };
       });
 
-    console.log(this.products)
+      console.log(this.products)
     });
-   
+
     categoryService.getCategories().then(docs => {
       docs.forEach(doc => {
         this.categories.push(doc.val().name);
@@ -66,37 +66,42 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  addCart(title,price,category,imageUrl,Quantity)
-  {
+  addCart(title, price, category, imageUrl, Quantity) {
     this.cart_title = title;
     this.cart_price = price;
     this.cart_category = category;
     this.cart_imageUrl = imageUrl;
     this.cart_qty = Quantity;
-    this.addToCartService.addToCart({
-      userID: this.user,
-      cart_title: this.cart_title,
-      cart_price: this.cart_price,
-      cart_category: this.cart_category,
-      cart_imageUrl: this.cart_imageUrl,
-      cart_quantity: this.cart_qty
-    }).then(res => {
-      console.log(res);
-      alert("Your product has been successfully recorded!");
-    }).catch(error => {
-      console.log(error);
-    });
+    if (this.cart_qty == 0) {
+      console.log("Quantity is empty!!!");
+      alert("Quantity is Empty!!!")
+    }
+    else {
+      this.addToCartService.addToCart({
+        userID: this.user,
+        cart_title: this.cart_title,
+        cart_price: this.cart_price,
+        cart_category: this.cart_category,
+        cart_imageUrl: this.cart_imageUrl,
+        cart_quantity: this.cart_qty
+      }).then(res => {
+        console.log(res);
+        alert("Your product has been successfully recorded!");
+      }).catch(error => {
+        console.log(error);
+      });
+    }
   }
 
 
-  category_get(c){
-   this.category_show = c; 
-   console.log(this.category_show);
+  category_get(c) {
+    this.category_show = c;
+    console.log(this.category_show);
   }
 
 
   openBackDropCustomClass(content) {
-    this.modalService.open(content, {backdropClass: 'light-blue-backdrop'});
+    this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
   }
 
   openWindowCustomClass(content) {
@@ -128,5 +133,5 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  
+
 }
