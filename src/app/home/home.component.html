@@ -10,17 +10,23 @@
 <div class="main">
     <div class="row">
         <h1>SPECTRUM</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>'Spectrum' the pioneers in making truly Sri Lankan authentic dishes that suit the palate of food lovers in
+            the country and around the globe located at No.138/A, Katubedda, Moratuwa, Sri Lanka, is a
+            much convenient dining facility that caters the guest who would love to dine in serene environs with the
+            feeling of 'stress free out-door dining within'.<br><br>
+
+            Whether you're planning to dine with your loved ones, celebrating a birthday, anniversary, a long overdue
+            date night or celebrating with a group, Raja Bojun is the best choice of restaurant in the city of Colombo
+            for any occasion. The relaxing main course experience begins with a range of fresh salads follows while your
+            orders at the hopper or grill stations heats up. You'll dip in the appetizing aroma of a variety of
+            tantalizing chicken, seafood and vegetables at the staple meal. Each morsel is hot, fresh and delicious as
+            the staple course is accompanied by an array of mouth watering pickles to add to the flavourful joy of
+            wholesome dining.</p>
     </div>
     <div class="row1">
-        <div *ngFor="let c of category; let i = index" class="card card1"> 
+        <div *ngFor="let c of category; let i = index" class="card card1">
             <div class="col">
-            <h5>{{c.name}}</h5>
+                <h5>{{c.name}}</h5>
             </div>
             <div *ngIf="(i+1) % 6 == 0" class="w-100"></div>
         </div>
