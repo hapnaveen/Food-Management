@@ -158,19 +158,7 @@
   .contact .php-email-form textarea {
     padding: 10px 12px;
   }
-  
-  .contact .php-email-form button[type="submit"] {
-    background: #cda45e;
-    border: 0;
-    padding: 10px 35px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
-  }
-  
-  .contact .php-email-form button[type="submit"]:hover {
-    background: #d3af71;
-  }
+
   
   @-webkit-keyframes animate-loading {
     0% {
